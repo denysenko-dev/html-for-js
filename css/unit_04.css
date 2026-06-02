@@ -7,3 +7,56 @@
 html, body {
     height: 100%;
 }
+
+div {
+    margin: 20px 10px;
+    padding: 10px 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: Arial, sans-serif;
+}
+
+#customers th, #customers td,
+.users th, .users td,
+.line-table th, .line-table td,
+.plan th, .plan td {
+    padding: 10px;
+}
+
+#customers th, #customers td,
+.users th, .users td {
+    border: 1px solid #c0c0c0;
+}
+
+.users th, .users td,
+.line-table th, .line-table td {
+    text-align: center;
+}
+
+#customers .header-table {
+    background-color: #dcdcdc;
+}
+
+.users .header-table th {
+    background-color: orangered;
+    color: white;
+    font-weight: normal;
+}
+
+.line-table tr {
+    border-bottom: 1px solid orange;
+}
+
+.plan {
+    border: 1px solid #dce0e5;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px 0 rgb(0 0 0 / 30%);
+}
+
+.plan th {
+    text-align: center;
+}
