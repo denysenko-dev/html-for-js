@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.task   {
+    margin-bottom: 30px;
+}
+
+.section    {
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.site-header {
+    background: url('http://itgid.info/img/html/header_bg_1000.png');
+    background-position: 50% 50%;
+    background-size: cover;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.site-header .header-wrap {
+    margin: 40px 0;
+    background-color: rgba(255,255,255,.75);
+    padding: 20px 0;
+}
+
+.site-header h1, .site-header h2 {
+    color: #222;
+    font-size: 26px;
+    text-align: center;
+    padding: 0 0 30px 0;
+    text-transform: uppercase;
+}
+
+.site-header h2 {
+    font-size: 22px;
+}
+
+.site-header a {
+    color: #3b0b99;
+}
+
+.site-header h2 a {
+    text-decoration: none;
+}
+
+
+h1 {
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 1000px;
+    width: 80%;
+    margin: 0 auto;
+    background: #f1f1f1;
+    padding: 10px;
+}
+
+figure {
+    padding: 30px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    box-shadow: 0 0 10px #c0c0c0;
+}
+
+figcaption {
+    font-style: italic;
+}
+
+p {
+    margin: 20px;
+    line-height: 150%;
+    margin-bottom: 30px;
+}
+.bg-orange {
+    background: orange;
+}
+
+.bg-orangered {
+    background: orangered;
+}
+
+.bg-brown {
+    background: brown;
+}
+
+.bg-darkcyan {
+    background: darkcyan;
+}
+
+.bg-dodgerBlue {
+    background: DodgerBlue;
+}
+
+
+
+.block {
+    width: 100px;
+    height: 100px;
+}
+/* Task 1 -------------------------------------- */
+.out-1 {
+    border: 1px solid black;
+    width: 302px;
+    height: 202px;
+    position: relative; 
+    margin: 50px auto;
+}
+
+.out-1 .t-1, .out-1 .t-2, .out-1 .t-3 {
+    position: relative;
+}
+
+.out-1 .t-2 {
+}
+
+.out-1 .t-3 {
+}
+
+/* Task 1 END -------------------------------------- */
+
+/* Task 2 -------------------------------------- */
+.out-2 {
+    border: 1px solid black;
+    width: 302px;
+    height: 202px;
+    position: relative; 
+    margin: 50px auto;
+}
+
+.out-2 .t-1, .out-2 .t-2, .out-2 .t-3 {
+    position: absolute;
+}
+
+.out-2 .t-2 {
+}
+
+.out-2 .t-3 {
+}
+
+/* Task 2 END -------------------------------------- */
+
+/* Task 3 -------------------------------------- */
+.out-3 {
+    border: 1px solid black;
+    width: 302px;
+    height: 202px;
+    position: relative; 
+    margin: 50px auto;
+}
+
+.out-3 .t-1, .out-3 .t-2, .out-3 .t-3 {
+    position: absolute;
+}
+
+.out-3 .t-1 {
+}
+
+.out-3 .t-2 {
+}
+
+.out-3 .t-3 {
+}
+
+/* Task 3 END -------------------------------------- */
+
+/* Task 4 -------------------------------------- */
+.out-4 {
+    border: 1px solid black;
+    width: 402px;
+    height: 202px;
+    position: relative; 
+    margin: 50px auto;
+}
+
+.out-4 .t-1, .out-4 .t-2, .out-4 .t-3, .out-4 .t-4 {
+    position: absolute;
+}
+
+.out-4 .t-1 {
+
+}
+
+.out-4 .t-2 {
+}
+
+.out-4 .t-3 {
+}
+
+.out-4 .t-4 {
+}
+
+/* Task 4 END -------------------------------------- */
+
+/* Task 5 -------------------------------------- */
+.out-5 {
+    border: 1px solid black;
+    width: 402px;
+    height: 202px;
+    position: relative; 
+    margin: 50px auto;
+}
+
+.out-5 .t-1, .out-5 .t-2, .out-5 .t-3 {
+    position: absolute;
+}
+
+.out-5 .t-1 {
+}
+
+.out-5 .t-2 {
+}
+
+.out-5 .t-3 {
+}
+
+
+/* Task 5 END -------------------------------------- */
+
+/* Task 6 -------------------------------------- */
+.out-6 {
+    position: relative;
+}
+
+.out-6 .s-6 {
+
+}   
+
+
+/* Task 6 END -------------------------------------- */
+
+/* Task 7 -------------------------------------- */
+.out-7 {
+    background: #000;
+    width: 30px;
+    height: 30px;
+}
+  
+
+
+/* Task 7 END -------------------------------------- */
+
+/* Task 8 -------------------------------------- */
+.out-8 {
+    padding: 10px;
+}
+  
+
+.span-8 {
+    text-align: center;
+} 
+/* Task 8 END -------------------------------------- */
+
+/* Task 9 -------------------------------------- */
+.out-9 {
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+    box-sizing: content-box;
+}
+
+
+/* Task 9 END -------------------------------------- */
+
+/* Task 10 -------------------------------------- */
+.out-10 {
+    width: 300px;
+    height: 90px;
+    position: relative;
+    /* потом свойство background удалите */
+    background: orange;
+}
+
+
+
+/* Task 10 END -------------------------------------- */
