@@ -10,11 +10,11 @@ table {
     border-collapse: collapse;
 }
 
-.task   {
+.task {
     margin-bottom: 30px;
 }
 
-.section    {
+.section {
     padding: 20px 0;
     margin-bottom: 40px;
 }
@@ -29,7 +29,7 @@ table {
 
 .site-header .header-wrap {
     margin: 40px 0;
-    background-color: rgba(255,255,255,.75);
+    background-color: rgba(255, 255, 255, .75);
     padding: 20px 0;
 }
 
@@ -40,6 +40,7 @@ table {
     padding: 0 0 30px 0;
     text-transform: uppercase;
 }
+
 .site-header h2 {
     font-size: 22px;
 }
@@ -71,3 +72,40 @@ p {
     margin-bottom: 30px;
 }
 
+.canvas {
+    width: 800px;
+    height: 1000px;
+    background-color: #fff;
+    background-image: url('../images/bg.png');
+    position: relative;
+    margin: 0 auto;
+}
+
+.img-1, .img-2, .img-3 {
+    position: absolute;
+    top: 250px;
+}
+
+.img-1 {
+    left: 50px;
+}
+
+.img-2 {
+    left: 300px;
+}
+
+.img-3 {
+    left: 550px;
+}
+
+.slogan {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+}
+
+.second-slogan {
+    position: absolute;
+    right: 38px;
+    top: 722px;
+}
