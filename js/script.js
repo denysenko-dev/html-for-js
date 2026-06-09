@@ -57,7 +57,7 @@ $(document)
                     .each(function () {
                         counter++;
                         $(this)
-                            .attr('data-image-id', counter);
+                            .data('image-id', counter);
                     });
             }
             $(setClickAttr)
@@ -72,14 +72,14 @@ $(document)
     .keydown(function (e) {
         switch (e.which) {
             case 37: // left
-                if ((modalId.data('bs.modal') || {})._isShown && $('#show-previous-image').is(":visible")) {
+                if (modalId.hasClass('in') || modalId.hasClass('show') && $('#show-previous-image').is(":visible")) {
                     $('#show-previous-image')
                         .click();
                 }
                 break;
 
             case 39: // right
-                if ((modalId.data('bs.modal') || {})._isShown && $('#show-next-image').is(":visible")) {
+                if (modalId.hasClass('in') || modalId.hasClass('show') && $('#show-next-image').is(":visible")) {
                     $('#show-next-image')
                         .click();
                 }
