@@ -102,11 +102,92 @@ p {
 
 
 .block {
-    width: 50px;
+    width: auto;
     height: 150px;
     margin: 1%;
 }
 
 /* ================ task 1 ========================= */
 
+.out-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 600px) {
+    .out-1 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .out-1 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
 /* ================ task 2 ========================= */
+
+.out-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.out-2 .block-3, .out-2 .block-4 {
+    grid-column: span 2;
+}
+
+@media screen and (min-width: 600px) {
+    .out-2 .block-3, .out-2 .block-4 {
+        grid-column: auto;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .out-2 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .out-2 .block-4 {
+        grid-column: span 3;
+    }
+}
+
+/* ================ task 3 ========================= */
+
+.out-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.out-3 .block-1, .out-3 .block-3, .out-3 .block-4 {
+    grid-column: span 3;
+}
+
+@media screen and (min-width: 600px) {
+    .out-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .out-3 .block-1, .out-3 .block-4 {
+        grid-column: span 2;
+    }
+
+    .out-3 .block-2, .out-3 .block-3 {
+        grid-column: auto;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .out-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .out-3 .block-1 {
+        grid-column: span 3;
+    }
+
+    .out-3 .block-2, .out-3 .block-4 {
+        grid-column: auto;
+    }
+}
