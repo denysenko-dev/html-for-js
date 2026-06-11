@@ -41,7 +41,7 @@ h1 {
 
 figure {
     padding: 30px;
-    margin: 20px 0;
+    margin: 20px auto;
     text-align: center;
 }
 
@@ -102,4 +102,90 @@ p {
 .block-3 {
     width: 100px;
     height: 100px;
+}
+
+.out-1 .link-1:visited {
+    color: #6495ED;
+}
+
+.out-1 .link-2:visited {
+    color: #E9967A;
+}
+
+.out-1 .link-1:hover {
+    color: #7FFF00;
+}
+
+.out-1 .link-2:hover {
+    color: #D2691E;
+}
+
+
+.out-2 .btn-2:hover {
+    background-color: #556B2F;
+}
+
+
+.out-3 .block-3 {
+    transition: all ease 1s;
+}
+
+.out-3 .block-3:hover {
+    width: 500px;
+}
+
+
+.out-4 .p-4:after {
+    content: "***";
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+}
+
+
+.out-5 .p-5:after, .out-5 .p-5:before {
+    color: orange;
+}
+
+.out-5 .p-5:before {
+    content: "[";
+}
+
+.out-5 .p-5:after {
+    content: "]";
+}
+
+
+.out-6 .ul-6 {
+    list-style-type: none;
+}
+
+.out-6 .ul-6 li:before {
+    content: "\201c";
+}
+
+
+.out-7 .p-7:first-letter {
+    font-size: 36px;
+    font-family: Georgia, serif;
+    color: orangered;
+}
+
+
+.out-8 .p-8:first-line {
+    color: orangered;
+}
+
+
+.out-9 .p-9:first-line {
+    color: red;
+}
+
+.out-9 .p-9:first-letter {
+    color: green;
+}
+
+
+.out-10 .i-10:focus {
+    background-color: orange;
 }
