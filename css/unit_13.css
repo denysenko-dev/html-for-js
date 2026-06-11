@@ -21,8 +21,7 @@ table {
 }
 
 .site-header {
-    background: url('http://itgid.info/img/html/header_bg_1000.png');
-    background-position: 50% 50%;
+    background: url('http://itgid.info/img/html/header_bg_1000.png') 50% 50%;
     background-size: cover;
     max-width: 100%;
     overflow: hidden;
@@ -124,20 +123,159 @@ p {
     background: DodgerBlue;
 }
 
-.block {
-    width: 100px;
-    height: 100px;
-}
-
 .out-1 img, .out-2 img, .out-3 img, .out-4 img, .out-5 img, .out-6 img, .out-7 img, .out-8 img, .out-9 img {
     width: 128px;
 }
-
 
 .block {
     width: 150px;
     height: 150px;
 }
 
-.block-1 {
+.out-1 .block-1 {
+    animation: orangered-round 2s 6 alternate forwards;
+}
+
+@keyframes orangered-round {
+    to {
+        border-radius: 50%;
+        background-color: orangered;
+    }
+}
+
+
+.out-2 .block-2 {
+    position: relative;
+    left: 0;
+    animation: brown-move 2s 2 alternate forwards;
+}
+
+@keyframes brown-move {
+    to {
+        left: calc(100% - 150px);
+    }
+}
+
+
+.out-3 img {
+    animation: rotate360 2s 5;
+}
+
+@keyframes rotate360 {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* unit 4 - було цікаво спробувати рухати блок не тільки по горизонталі, а й по вертикалі*/
+
+.out-4 {
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+    border: 1px solid green;
+    overflow: hidden;
+}
+
+.out-4-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.out-4:hover .out-4-inner {
+    animation: top-left 3s infinite alternate ease-in-out;
+}
+
+.out-4-inner span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.out-4-inner span:nth-child(2) {
+    top: calc(50% + 50px);
+}
+
+.out-4-inner span:nth-child(3) {
+    top: calc(50% + 50px);
+    left: 150%;
+}
+
+@keyframes top-left {
+    0%, 30% {
+        transform: translate(0, 0);
+    }
+
+    35%, 65% {
+        transform: translate(0, -50px);
+    }
+
+    70%, 100% {
+        transform: translate(-100%, -50px);
+    }
+}
+
+
+.out-5 {
+    margin: 0 auto;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.out-5-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.out-5:hover .out-5-inner {
+    animation: img-slider 6s infinite ease-in-out;
+}
+
+.out-5-inner img {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.out-5-inner img:nth-child(1) {
+    left: 50%;
+}
+
+.out-5-inner img:nth-child(2) {
+    left: 150%;
+}
+
+.out-5-inner img:nth-child(3) {
+    left: 250%;
+}
+
+.out-5-inner img:nth-child(4) {
+    left: 350%;
+}
+
+@keyframes img-slider {
+    0%, 15% {
+        transform: translateX(0);
+    }
+
+    25%, 40% {
+        transform: translateX(-100%);
+    }
+
+    50%, 65% {
+        transform: translateX(-200%);
+    }
+
+    75%, 90% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }

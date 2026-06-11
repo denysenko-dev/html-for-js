@@ -4,69 +4,141 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Unit 13. Анимация.</title>
-		<link rel="stylesheet" href="./css/unit_13.css">
+		<title>Unit 12. Пседвоэлементы и псевдоклассы</title>
+		<link rel="stylesheet" href="./css/unit_12.css">
 	</head>
 
 	<body>
 		<div class="container">
 			<header class="site-header">
-				<div class="header-wrap">
-					<h1>Unit 13. Анимация</h1>
-					<h2><a href="https://itgid.info/course/html">ITGID.info <br> HTML для JavaScript разработчиков</a></h2>
-				</div>
+				<img src="./images/header_bg.jpg" alt="itgid.info">
+				<h1>Unit 12. Пседвоэлементы и псевдоклассы</h1>
+				<h2><a href="https://itgid.info/course/html">ITGID.info <br> HTML для JavaScript разработчиков</a></h2>
 			</header>
-
-			<div class="section">
-				<p><b>Task 1.</b> Создайте анимацию. Блок должен становиться круглым. Цвет - orangered. Анимация должна
-					повторяться 3 раза.</p>
+			<section>
+				<h1 class="task-title">Task 1</h1>
+				<p>Даны две гиперссылки. Добавьте в CSS стили, чтобы при наведении первая ссылка окрашивалась в цвет текста
+					#7FFF00, вторая #D2691E. И для visited ссылок для первой цвет #6495ED и для второй #E9967A</p>
 				<div class="out-1">
-					<div class="block block-1 bg-darkcyan"></div>
+					<a href="#" class="link-1">Test Link 1</a>
+					<a href="#" class="link-2">Test Link 2</a>
 				</div>
-			</div><!-- div.section end -->
-			<div class="section">
-				<p><b>Task 2.</b> Создайте анимацию. Блок должен двигаться в правую сторону экрана, до края блока out-2, а потом
-					- назад. Аниация проигрывается один раз.</p>
-				<div class="out-2 bg-orange">
-					<div class="block block-2 bg-brown"></div>
+			</section>
+			<section>
+				<h1 class="task-title">Task 2</h1>
+				<p>Дан элемент button. При наведении измените цвет фона на #556B2F.</p>
+				<div class="out-2">
+					<button class="btn-2">Button</button>
 				</div>
-			</div><!-- div.section end -->
-			<div class="section">
-				<p><b>Task 3.</b> Изображение внутри блока должно поворачиваться на 360
-					градусов за 2 секунды. Анимация повторяется 5 раз.</p>
-				<div class="out-3 bg-dodgerBlue">
-					<img src="https://cdn3.iconfinder.com/data/icons/animals-105/150/icon_animal_cachorro-256.png" alt="">
+			</section>
+			<section>
+				<h1 class="task-title">Task 3</h1>
+				<p>Дан блок block-3. При наведении увеличивайте его ширину до 500px при наведении мыши. Плавность увеличения
+					обеспечьте строкой all ease 1s.</p>
+				<div class="out-3">
+					<div class="block-3 bg-orangered">Блок</div>
 				</div>
-			</div><!-- div.section end -->
-			<div class="section">
-				<p><b>Task 4.</b> Реализуйте анимацию как показано на видео. Время выберите самостоятельно. Обратите внимание -
-					блоки на некоторое время останавливаются в центральных позициях. Двигаем только блок out-4-inner. Анимация -
-					бесконечная. После отладки анимации для блока out-4 добавьте свойство overflow: hidden; чтобы скрыть все что
-					выходит за пределы out-4 (видео как работает - на сайте).</p>
-
-				<div class="out-4 bg-orange">
-					<div class="out-4-inner">
-						<span>Left</span>
-						<span>Center</span>
-						<span>Right</span>
-					</div>
+			</section>
+			<section>
+				<h1 class="task-title">Task 4</h1>
+				<p>Даны параграфы p.p-4, добавьте после них с помощью псевдоэлемента after три звездочки. Звездочки
+					располагаются на отдельной строке, margin сверху и снизу 20px. Выравнивание - по центру.</p>
+				<div class="out-4">
+					<p class="p-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, rem? Ab, nostrum
+						laboriosam. Eaque earum excepturi voluptatem rerum minus quidem beatae nihil. Blanditiis maxime
+						reprehenderit veniam autem minima sed! Beatae?</p>
+					<p class="p-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, rem? Ab, nostrum
+						laboriosam. Eaque
+						earum excepturi voluptatem rerum minus quidem beatae nihil. Blanditiis maxime reprehenderit veniam
+						autem minima sed!
+						Beatae?</p>
+					<p class="p-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, rem? Ab, nostrum
+						laboriosam. Eaque
+						earum excepturi voluptatem rerum minus quidem beatae nihil. Blanditiis maxime reprehenderit veniam
+						autem minima sed!
+						Beatae?</p>
 				</div>
-			</div><!-- div.section end -->
-			<div class="section">
-				<p><b>Task 5.</b> Задание полностью аналогично 4 таску. Только вместо span - изображения. Двигаем out-5-inner.
+			</section>
+			<section>
+				<h1 class="task-title">Task 5</h1>
+				<p>Даны параграфы p.p-5, добавьте с помощью before элемент [ перед началом текста и ] после конца текста.
+					Скобки должны располагаться на той же строке что и текст. Цвет - оранжевый.</p>
+				<div class="out-5">
+					<p class="p-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, rem? Ab, nostrum
+						laboriosam. Eaque earum excepturi voluptatem rerum minus quidem beatae nihil. Blanditiis maxime
+						reprehenderit veniam autem minima sed! Beatae?</p>
+					<p class="p-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, rem? Ab, nostrum
+						laboriosam. Eaque
+						earum excepturi voluptatem rerum minus quidem beatae nihil. Blanditiis maxime reprehenderit veniam
+						autem minima sed!
+						Beatae?</p>
+					<p class="p-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, rem? Ab, nostrum
+						laboriosam. Eaque
+						earum excepturi voluptatem rerum minus quidem beatae nihil. Blanditiis maxime reprehenderit veniam
+						autem minima sed!
+						Beatae?</p>
+				</div>
+			</section>
+			<section>
+				<h1 class="task-title">Task 6</h1>
+				<p>Даны список u-6. Скройте элементам li стандартный маркер, а с помощью элемента before для li запишите в
+					content следующий символ: \201c в кавычках. Если вы все правильно сделали получится фигурная кавычка.
 				</p>
-				<div class="out-5 bg-dodgerBlue">
-					<div class="out-5-inner">
-						<img src="https://cdn4.iconfinder.com/data/icons/SOPHISTIQUE/computer_gadgets/png/400/robotic_pet.png"
-						     alt="">
-						<img src="https://cdn4.iconfinder.com/data/icons/SOPHISTIQUE/mail_icons/png/400/robot.png" alt="">
-						<img src="https://cdn4.iconfinder.com/data/icons/SOPHISTIQUE/accounting/png/400/money_bag.png" alt="">
-						<img src="https://cdn4.iconfinder.com/data/icons/SOPHISTIQUE/computer_gadgets/png/400/ergonomic_mouse.png"
-						     alt="">
-					</div>
+				<div class="out-6">
+					<ul class="ul-6">
+						<li>one</li>
+						<li>one</li>
+						<li>one</li>
+						<li>one</li>
+					</ul>
 				</div>
-			</div><!-- div.section end -->
-
+			</section>
+			<section>
+				<h1 class="task-title">Task 7</h1>
+				<p>Дан параграф p-7. С помощью псевдоэлемента first-letter сделайте первую букву параграфа шрифтом Georgia,
+					цвет orangered, размер 36px.</p>
+				<div class="out-7">
+					<p class="p-7">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente non tenetur quidem! Ea
+						officia temporibus quos qui, quod at inventore quia quas voluptatibus quibusdam eum, eligendi sed a,
+						similique mollitia.</p>
+				</div>
+			</section>
+			<section>
+				<h1 class="task-title">Task 8</h1>
+				<p>Дан параграф p-8. С помощью псевдоэлемента first-line сделайте первую строку цветом orangered.</p>
+				<div class="out-8">
+					<p class="p-8">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente non tenetur quidem! Ea
+						officia
+						temporibus quos qui, quod at inventore quia quas voluptatibus quibusdam eum, eligendi sed a,
+						similique
+						mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ex debitis odit iste
+						enim repellendus voluptate excepturi optio facilis error iure id ea veniam ab, blanditiis earum
+						maiores! Ut, temporibus.</p>
+				</div>
+			</section>
+			<section>
+				<h1 class="task-title">Task 9</h1>
+				<p>Дан параграф p-9. Примените к нему first-line, цветом текста red, first-letter с цветом green. Изучите
+					результат.</p>
+				<div class="out-9">
+					<p class="p-9">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente non tenetur quidem! Ea
+						officia
+						temporibus quos qui, quod at inventore quia quas voluptatibus quibusdam eum, eligendi sed a,
+						similique
+						mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ex debitis odit iste
+						enim repellendus voluptate excepturi optio facilis error iure id ea veniam ab, blanditiis earum
+						maiores! Ut, temporibus.</p>
+				</div>
+			</section>
+			<section>
+				<h1 class="task-title">Task 10</h1>
+				<p>Дан input i-10. Сделайте так, чтобы в состоянии когда пользователь печатает текст в input фон цвета был
+					оранжевый.
+				</p>
+				<div class="out-10">
+					<input type="text" class="i-10">
+				</div>
+			</section>
 		</div>
 
 	</body>
