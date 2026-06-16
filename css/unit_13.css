@@ -168,53 +168,37 @@ p {
 }
 
 
-/* unit 4 - було цікаво спробувати рухати блок не тільки по горизонталі, а й по вертикалі*/
-
 .out-4 {
     margin: 0 auto;
     width: 200px;
     height: 50px;
-    border: 1px solid green;
+    border: 3px solid black;
     overflow: hidden;
 }
 
 .out-4-inner {
-    position: relative;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    width: 300%;
     height: 100%;
+    animation: text-slider 6s infinite ease-in-out;
 }
 
-.out-4:hover .out-4-inner {
-    animation: top-left 3s infinite alternate ease-in-out;
-}
-
-.out-4-inner span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.out-4-inner span:nth-child(2) {
-    top: calc(50% + 50px);
-}
-
-.out-4-inner span:nth-child(3) {
-    top: calc(50% + 50px);
-    left: 150%;
-}
-
-@keyframes top-left {
-    0%, 30% {
-        transform: translate(0, 0);
+@keyframes text-slider {
+    0%, 25% {
+        transform: translateX(0);
     }
 
-    35%, 65% {
-        transform: translate(0, -50px);
+    35%, 60% {
+        transform: translateX(calc(-100% / 3));
     }
 
-    70%, 100% {
-        transform: translate(-100%, -50px);
+    70%, 95% {
+        transform: translateX(calc(-200% / 3));
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -226,36 +210,14 @@ p {
     overflow: hidden;
 }
 
+
 .out-5-inner {
-    position: relative;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    width: 400%;
     height: 100%;
-}
-
-.out-5:hover .out-5-inner {
-    animation: img-slider 6s infinite ease-in-out;
-}
-
-.out-5-inner img {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.out-5-inner img:nth-child(1) {
-    left: 50%;
-}
-
-.out-5-inner img:nth-child(2) {
-    left: 150%;
-}
-
-.out-5-inner img:nth-child(3) {
-    left: 250%;
-}
-
-.out-5-inner img:nth-child(4) {
-    left: 350%;
+    animation: img-slider 8s infinite ease-in-out;
 }
 
 @keyframes img-slider {
@@ -264,17 +226,14 @@ p {
     }
 
     25%, 40% {
-        transform: translateX(-100%);
+        transform: translateX(-25%);
     }
-
     50%, 65% {
-        transform: translateX(-200%);
+        transform: translateX(-50%);
     }
-
     75%, 90% {
-        transform: translateX(-300%);
+        transform: translateX(-75%);
     }
-
     100% {
         transform: translateX(0);
     }
