@@ -25,12 +25,23 @@ function clear() {
 // CSS 
 
 function css() {
-    const source = './src/css/style.css';
+    const source = './src/css/*';
 
     return src(source)
         .pipe(changed(source))
         .pipe(cssnano())
         .pipe(dest('./build/css/'))
+        .pipe(browsersync.stream());
+}
+
+// CSS 
+
+function js() {
+    const source = './src/js/*';
+
+    return src(source)
+        .pipe(changed(source))
+        .pipe(dest('./build/js/'))
         .pipe(browsersync.stream());
 }
 
@@ -54,6 +65,7 @@ function html() {
 
 function watchFiles() {
     watch('./src/css/*', css);
+    watch('./src/js/*', js);
     watch('./src/*.html', html);
     watch('./src/images/*', img);
 }
@@ -70,4 +82,4 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, parallel(html, css, img));
+exports.default = series(clear, parallel(html, js, css, img));
