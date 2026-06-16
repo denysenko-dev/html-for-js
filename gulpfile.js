@@ -8,7 +8,7 @@ const {
 
 // Load plugins
 
-const cssnano = require('gulp-cssnano');
+const cleanCSS = require('gulp-clean-css');
 const changed = require('gulp-changed');
 const browsersync = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
@@ -29,7 +29,7 @@ function css() {
 
     return src(source)
         .pipe(changed(source))
-        .pipe(cssnano())
+        .pipe(cleanCSS())
         .pipe(dest('./build/css/'))
         .pipe(browsersync.stream());
 }
