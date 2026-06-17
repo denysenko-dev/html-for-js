@@ -17,6 +17,8 @@
     "gulp-imagemin": "^7.1.0"
   },
   "dependencies": {
+    "@fontsource/ibm-plex-serif": "^5.2.7",
+    "@fontsource/roboto": "^5.2.10",
     "bootstrap": "^5.3.8"
   }
 }

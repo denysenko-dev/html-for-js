@@ -17,7 +17,8 @@ const clean = require('gulp-clean');
 
 function clear() {
     return src('./build/*', {
-        read: false
+        read: false,
+        allowEmpty: true
     })
         .pipe(clean());
 }
@@ -61,6 +62,28 @@ function html() {
         .pipe(browsersync.stream());
 }
 
+// Fonts
+
+function fonts() {
+    return src([
+        // Roboto
+        './node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff2',
+        './node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2',
+        './node_modules/@fontsource/roboto/files/roboto-cyrillic-400-italic.woff2',
+        './node_modules/@fontsource/roboto/files/roboto-latin-400-italic.woff2',
+        './node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff2',
+        './node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff2',
+
+        // IBM Plex Serif
+        './node_modules/@fontsource/ibm-plex-serif/files/ibm-plex-serif-cyrillic-400-normal.woff2',
+        './node_modules/@fontsource/ibm-plex-serif/files/ibm-plex-serif-latin-400-normal.woff2',
+        './node_modules/@fontsource/ibm-plex-serif/files/ibm-plex-serif-cyrillic-700-normal.woff2',
+        './node_modules/@fontsource/ibm-plex-serif/files/ibm-plex-serif-latin-700-normal.woff2'
+    ])
+        .pipe(dest('./build/fonts/'))
+        .pipe(browsersync.stream());
+}
+
 // Watch files
 
 function watchFiles() {
@@ -81,5 +104,5 @@ function browserSync() {
     });
 }
 
-exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, parallel(html, js, css, img));
+exports.watch = series(clear, parallel(html, js, css, img, fonts), parallel(watchFiles, browserSync));
+exports.default = series(clear, parallel(html, js, css, img, fonts));
