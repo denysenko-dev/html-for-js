@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-size: 16px;
+}
+
+.body-bg {
+    background: url("../images/bois-texture-1456353976vDQ.jpg");
+    background-size: cover;
+}
+
+.cv {
+    margin-top: 50px;
+    border: 1px solid #4b4b4b;
+    box-shadow: 1px 1px 10px #000;
+}
+
+.cv-left {
+    background-color: #4b4b4b;
+    min-height: 30vh;
+    color: #fff;
+}
+
+.cv-right {
+    background-color: #fff;
+    min-height: 30vh;
+    color: #131313;
+}
+
+.photo-block {
+
+}
+
+.cv-left a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.cv-left ul {
+    line-height: 175%;
+    padding-left: 30px;
+}
+
+.cv-left ul.contacts-block {
+    list-style-type: none;
+}
+
+.cv-left .address {
+    font-style: italic;
+}
