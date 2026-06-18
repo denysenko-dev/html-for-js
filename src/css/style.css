@@ -16,10 +16,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: IBM Plex Serif, serif;
 }
 
-.cv-header, .profile, .experience, .comments {
-    font-family: IBM Plex Serif, serif;
-}
-
 .cv {
     border: 1px solid #4b4b4b;
     box-shadow: 1px 1px 10px #000;
@@ -97,4 +93,21 @@ article {
 .lines::after {
     margin-right: -100%;
     margin-left: 1.5rem;
+}
+
+@media screen and (max-width: 991.98px) {
+    .cv-left h1, .cv-left h2, .cv-left h3, .cv-left h4 {
+        font-size: 1.3rem;
+    }
+
+    .cv-left ul {
+        line-height: 150%;
+        padding-left: 25px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .photo-block img {
+        max-width: 50%;
+    }
 }
