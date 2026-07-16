@@ -40,9 +40,10 @@ have a `package.json` next to it.
 ## Commands (run from inside a Gulp-based unit, or repo root on a `lesson-15`+ branch)
 
 ```
-npm install       # installs devDependencies (gulp + plugins) and dependencies (bootstrap, fontsource fonts)
-npx gulp          # one-shot build: clears build/, compiles html/css/js/images/fonts into build/
-npx gulp watch    # build + watch src/ + serves build/ via BrowserSync on http://localhost:3000
+npm install       # installs devDependencies (gulp + plugins) and dependencies (varies by lesson, see below)
+npx gulp          # one-shot build: clears build/, compiles src/ into build/
+npx gulp watch    # watches src/, serves build/ via BrowserSync on http://localhost:3000
+                   # (unit_15-17: does NOT build first — run `npx gulp` once beforehand)
 ```
 
 There is no lint/test tooling configured. The `test` script in `package.json` is npm's default placeholder
@@ -51,18 +52,23 @@ There is no lint/test tooling configured. The `test` script in `package.json` is
 To verify a `package.json`/`package-lock.json` pair are in sync without touching `node_modules`, use
 `npm ci --dry-run`.
 
-## Gulp pipeline shape (`gulpfile.js`, identical across `unit_15`–`unit_19` / `lesson-15`–`lesson-19`)
+## Gulp pipeline shape (`gulpfile.js`)
 
-Tasks, run in parallel after `clear` wipes `build/`:
-- `css` — minifies `src/css/*` with `gulp-clean-css`, only rebuilds changed files (`gulp-changed`)
+The pipeline is **not** identical across `unit_15`–`unit_19` (and their `lesson-15`–`lesson-19` equivalents) —
+it evolved lesson by lesson. Base tasks present everywhere, run in parallel after `clear` wipes `build/`:
+- `css` — minifies `src/css/*`, only rebuilds changed files (`gulp-changed`)
 - `js` — copies changed `src/js/*` as-is
 - `img` — optimizes `src/images/*` with `gulp-imagemin`
 - `html` — copies `src/*.html`
-- `fonts` — copies a **hardcoded list** of `.woff2` files out of `node_modules/@fontsource/*`; if a font
-  package is added/changed, this file list in `gulpfile.js` must be updated by hand, it isn't derived
-  automatically
 
-`exports.default` runs the build once; `exports.watch` additionally watches `src/` and starts BrowserSync.
+Per-lesson differences, check the actual `gulpfile.js` on the unit/branch you're touching before assuming:
+- **CSS minifier**: `unit_15` uses the older, deprecated `gulp-cssnano`; `unit_16`–`unit_19` use `gulp-clean-css`.
+- **`fonts` task**: only exists from `unit_18` onward — copies a **hardcoded list** of `.woff2` files out of
+  `node_modules/@fontsource/*` into `build/fonts`; if a font package is added/changed, this list must be
+  updated by hand, it isn't derived automatically.
+- **`exports.watch`**: on `unit_15`–`unit_17` it's `parallel(watchFiles, browserSync)` — it does **not** build
+  first, so `build/` must already exist (run `npx gulp` once) before `npx gulp watch` serves anything. On
+  `unit_18`–`unit_19` it runs the full build (`clear` + all tasks) before watching, so `npx gulp watch` alone
+  is enough.
 
-Earlier lessons used `gulp-cssnano` for CSS minification (deprecated, last touched at `lesson-15`); `lesson-16`
-onward switched to `gulp-clean-css`.
+`exports.default` always runs the build once.
