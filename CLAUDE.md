@@ -28,6 +28,24 @@ Not every lesson branch has a `package.json`: only `lesson-15`–`lesson-19` do 
 formalized with a `package.json` at lesson 15). Only commit `package-lock.json` on branches/folders that already
 have a `package.json` next to it.
 
+### Bringing a finished lesson branch onto `main`
+
+Once a lesson is done on its `lesson-N` branch, its content gets copied into a new `unit_N/` folder on `main`.
+Because `lesson-N` keeps its files at the repo root (not under `unit_N/`), a plain `git checkout lesson-N -- .`
+won't work here — it looks for matching paths in the source branch, and `unit_N/...` doesn't exist there. Use
+`git read-tree` with `--prefix` instead, which grafts the branch's tree into a subdirectory and creates it
+automatically (no manual `mkdir` needed):
+
+```
+git checkout main
+git read-tree --prefix=unit_N/ -u lesson-N
+git commit -m "chore: bring in unit_N from lesson-N"
+```
+
+Substitute `N` for the lesson number both places (e.g. `unit_23` / `lesson-23`) — the command itself doesn't
+change otherwise. This only works the first time `unit_N/` is added (fresh prefix); it errors out with
+`existing entries` if that folder already has content on `main`.
+
 ## Two kinds of units
 
 - **`unit_01`–`unit_13`** (static, no build step): each is just `unit_NN/unit_NN.html` +
