@@ -1,4 +1,4 @@
-document.querySelector('#my-name').innerHTML = `${data.first_name} <span class="color-grey">${data.last_name}</span>`;
+document.querySelector('#my-name').innerHTML = `${data.first_name} <span class="color-gray">${data.last_name}</span>`;
 document.querySelector('#job-title').textContent = data.job_title;
 document.querySelector('.profile-data').textContent = data.profile;
 /**
