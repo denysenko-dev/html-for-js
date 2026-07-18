@@ -48,7 +48,7 @@ function js() {
         .pipe(browsersync.stream());
 }
 
-// Vendor scripts (pulled from node_modules, not hand-copied into src/js)
+// Vendor
 
 function vendor() {
     return src([

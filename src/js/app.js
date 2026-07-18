@@ -21,10 +21,6 @@ function setText(selector, text) {
     }
 }
 
-/**
- * header
- */
-
 setHTML('#my-name', `${escapeHtml(data.first_name)} <span class="color-gray">${escapeHtml(data.last_name)}</span>`);
 setText('#job-title', data.job_title);
 setText('.profile-data', data.profile);
