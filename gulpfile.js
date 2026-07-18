@@ -13,6 +13,7 @@ const changed = require('gulp-changed');
 const browsersync = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
 const clean = require('gulp-clean');
+const terser = require('gulp-terser');
 
 
 function clear() {
@@ -35,13 +36,24 @@ function css() {
         .pipe(browsersync.stream());
 }
 
-// CSS 
+// JS
 
 function js() {
     const source = './src/js/*';
 
     return src(source)
         .pipe(changed(source))
+        .pipe(terser())
+        .pipe(dest('./build/js/'))
+        .pipe(browsersync.stream());
+}
+
+// Vendor scripts (pulled from node_modules, not hand-copied into src/js)
+
+function vendor() {
+    return src([
+        './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+    ])
         .pipe(dest('./build/js/'))
         .pipe(browsersync.stream());
 }
@@ -104,5 +116,5 @@ function browserSync() {
     });
 }
 
-exports.watch = series(clear, parallel(html, js, css, img, fonts), parallel(watchFiles, browserSync));
-exports.default = series(clear, parallel(html, js, css, img, fonts));
+exports.watch = series(clear, parallel(html, js, vendor, css, img, fonts), parallel(watchFiles, browserSync));
+exports.default = series(clear, parallel(html, js, vendor, css, img, fonts));
