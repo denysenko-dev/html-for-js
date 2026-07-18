@@ -1,56 +1,79 @@
-document.querySelector('#my-name').innerHTML = `${data.first_name} <span class="color-gray">${data.last_name}</span>`;
-document.querySelector('#job-title').textContent = data.job_title;
-document.querySelector('.profile-data').textContent = data.profile;
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function setHTML(selector, html) {
+    const el = document.querySelector(selector);
+    if (el) {
+        el.innerHTML = html;
+    }
+}
+
+function setText(selector, text) {
+    const el = document.querySelector(selector);
+    if (el) {
+        el.textContent = text;
+    }
+}
+
 /**
- * section data
+ * header
  */
-let expirienceData = '';
-experience.forEach(item => {
-    expirienceData += `<section class="mb-5">`;
-    expirienceData += ` <h4 class="company-name mb-2">${item.company} - ${item.city}, <i>${item.from} - ${item.to}</i></h4>`;
-    expirienceData += `<h5>${item.position}</h5>`;
-    expirienceData += `<p>${item.description}</p>`;
-    expirienceData += `</section>`;
-});
-document.querySelector('.experience-list').innerHTML = expirienceData;
+
+setHTML('#my-name', `${escapeHtml(data.first_name)} <span class="color-gray">${escapeHtml(data.last_name)}</span>`);
+setText('#job-title', data.job_title);
+setText('.profile-data', data.profile);
+
+/**
+ * experience
+ */
+
+const experienceData = experience.map(item => `
+    <section class="mb-5">
+        <h4 class="company-name mb-2">${escapeHtml(item.company)} - ${escapeHtml(item.city)}, <i>${escapeHtml(item.from)} - ${escapeHtml(item.to)}</i></h4>
+        <h5>${escapeHtml(item.position)}</h5>
+        <p>${escapeHtml(item.description)}</p>
+    </section>
+`).join('');
+setHTML('.experience-list', experienceData);
 
 /**
  * contact data
  */
 
-document.querySelector('.contacts-block').innerHTML += `<li><a href="tel:${data.phone}">${data.phone}</a></li>`
-document.querySelector('.contacts-block').innerHTML += `<li><a href="mailto:${data.email}">${data.email}</a></li>`
-document.querySelector('.contacts-block').innerHTML += `<li><a href="callto:${data.skype}">${data.skype}</a></li>`
-document.querySelector('.contacts-block').innerHTML += `<li><a href="${data.linkedin}">${data.linkedin}</a></li>`
-document.querySelector('.address').innerHTML = `<p>${data.address}</p>`;
-document.querySelector('#my-photo').src = data.photo;
+const contactsData = [
+    `<li><a href="tel:${escapeHtml(data.phone)}">${escapeHtml(data.phone)}</a></li>`,
+    `<li><a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a></li>`,
+    `<li><a href="skype:${escapeHtml(data.skype)}">${escapeHtml(data.skype)}</a></li>`,
+    `<li><a href="${escapeHtml(data.linkedin)}">${escapeHtml(data.linkedin)}</a></li>`
+].join('');
+setHTML('.contacts-block', contactsData);
+setHTML('.address', `<p>${escapeHtml(data.address)}</p>`);
+
+const photo = document.querySelector('#my-photo');
+if (photo) {
+    photo.src = data.photo;
+}
 
 /**
  * skills
  */
 
-let skillsData = '';
-data.skills.forEach(item => {
-    skillsData += `<li>${item}</li>`;
-});
-document.querySelector('.skills-list').innerHTML = skillsData;
+setHTML('.skills-list', data.skills.map(item => `<li>${escapeHtml(item)}</li>`).join(''));
 
 /**
  * education
  */
 
-let educationData = '';
-data.education.forEach(item => {
-    educationData += `<li>${item[0]}, ${item[1]}</li>`;
-});
-document.querySelector('.education-list').innerHTML = educationData;
+setHTML('.education-list', data.education.map(item => `<li>${escapeHtml(item[0])}, ${escapeHtml(item[1])}</li>`).join(''));
 
 /**
- * Achievements
+ * achievements
  */
 
-let achievementsData = '';
-data.achievements.forEach(item => {
-    achievementsData += `<li>${item},</li>`;
-});
-document.querySelector('.achievements-list').innerHTML = achievementsData;
+setHTML('.achievements-list', data.achievements.map(item => `<li>${escapeHtml(item)}</li>`).join(''));
